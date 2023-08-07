@@ -21,7 +21,7 @@ def denoise_signal(denoiser):
 
 # Load audio file
 print("loading aduio wav file")
-Fs, y = wav.read('BB_Anal2.wav')
+Fs, y = wav.read('Test_Signal.wav')
 print("\n Normalizing the signal \n")
 y = y / np.max(np.abs(y))  # Normalizing
 # Get spectra(FFT)
