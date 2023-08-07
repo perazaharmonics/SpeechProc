@@ -8,7 +8,7 @@ from pDaubechies_Denoiser import DaubechiesWaveletDenoiser
 
 # Load audio file
 print("Reading the file")
-Fs, y = wav.read('BB_Anal2.wav')
+Fs, y = wav.read('Test_Signal.wav')
 y = y / np.max(np.abs(y))  # Normalizing
 
 # Denoising
