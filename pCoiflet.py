@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from pCoiflet_Denoiser import CoifletWaveletDenoiser
 
 print("\n reading the file \n")
-Fs, y = wav.read('BB_Anal2.wav')
+Fs, y = wav.read('Test_Signal.wav')
 y = y / np.max(np.abs(y))  # Normalizing
 Y = fft(y)
 f = np.linspace(0, Fs / 2, len(Y) // 2)
