@@ -16,7 +16,13 @@ fs = 44.1e3; % Sampling frequency
 % Calculate harmonics frequencies using the inharmonicity formula
 k = 1:25; % Harmonic numbers
 f_k_A0 = f0_A0 * sqrt(1 + B_A0 * k.^2);
+% Print the inharmonic frequencies for A0 and C7
+fprintf('Inharmonic frequencies for A0:\n');
+disp(f_k_A0);
+
 f_k_C7 = f0_C7 * sqrt(1 + B_C7 * k.^2);
+fprintf('\nInharmonic frequencies for C7:\n');
+disp(f_k_C7);
 
 % Convert frequencies to angular frequencies
 omega_k_A0 = 2 * pi * f_k_A0;
@@ -56,6 +62,24 @@ grid on;
 title('Phase Response of Allpass Biquad Filter');
 xlabel('Frequency (Hz)');
 ylabel('Phase (radians)');
+
+% Plotting the inharmonic frequencies for A0
+figure;
+subplot(1, 2, 1);
+stem(k, f_k_A0, 'b', 'filled');
+title('Inharmonic Frequencies for A0');
+xlabel('Harmonic number');
+ylabel('Frequency (Hz)');
+
+% Plotting the inharmonic frequencies for C7
+subplot(1, 2, 2);
+stem(k, f_k_C7, 'b', 'filled');
+title('Inharmonic Frequencies for C7');
+xlabel('Harmonic number');
+ylabel('Frequency (Hz)');
+
+% Show grid
+grid on;
 
 % Set the figure properties
 set(gcf, 'Color', 'w');
